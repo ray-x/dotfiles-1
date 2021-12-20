@@ -83,11 +83,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
     git
     docker
+    kubectl
     dotenv
     dotnet
     helm
     pip
-    kubectl
     yarn
     npm
     node
@@ -153,3 +153,8 @@ alias vim="nvim"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 eval "$(pyenv init -)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/dotfiles/zsh/.p10k.zsh.
+[[ ! -f ~/dotfiles/zsh/.p10k.zsh ]] || source ~/dotfiles/zsh/.p10k.zsh
