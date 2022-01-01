@@ -14,8 +14,8 @@ telescope.setup {
 
     mappings = {
       i = {
-        ["<C-n>"] = actions.cycle_history_next,
-        ["<C-p>"] = actions.cycle_history_prev,
+        -- ["<C-n>"] = actions.cycle_history_next,
+        -- ["<C-p>"] = actions.cycle_history_prev,
 
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
@@ -85,6 +85,9 @@ telescope.setup {
     -- }
     -- Now the picker_config_key will be applied every time you call this
     -- builtin picker
+    find_files = {
+      hidden = true,
+    }
   },
   extensions = {
     -- Your extension configuration goes here:
