@@ -61,7 +61,31 @@ return packer.startup(function(use)
   use "lukas-reineke/indent-blankline.nvim"
   use "goolord/alpha-nvim"
 --   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
-  use "folke/which-key.nvim"
+  use "folke/which-key.nvim"  
+  use "unblevable/quick-scope"
+  use "phaazon/hop.nvim"
+  -- use "andymass/vim-matchup"
+  -- use "nacro90/numb.nvim"
+  -- use "monaqa/dial.nvim"
+  -- use "norcalli/nvim-colorizer.lua"
+  -- use "windwp/nvim-spectre"
+  -- use "folke/zen-mode.nvim"
+  -- use "karb94/neoscroll.nvim"
+  -- use "folke/todo-comments.nvim"
+  -- use "kevinhwang91/nvim-bqf"
+  -- use "ThePrimeagen/harpoon"
+  -- use "MattesGroeger/vim-bookmarks"
+  -- use "lunarvim/vim-solidity"
+  -- use "blackCauldron7/surround.nvim"
+  -- use "Shatur/neovim-session-manager"
+  -- use "rcarriga/nvim-notify"
+  -- use "tversteeg/registers.nvim"
+  -- use 'metakirby5/codi.vim'
+  -- use {
+  --   "iamcco/markdown-preview.nvim",
+  --   run = "cd app && npm install",
+  --   ft = "markdown",
+  -- }
 
   -- Colorschemes
   use 'Mofiqul/vscode.nvim'
