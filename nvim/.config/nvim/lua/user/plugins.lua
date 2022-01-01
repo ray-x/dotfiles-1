@@ -64,7 +64,7 @@ return packer.startup(function(use)
   use "folke/which-key.nvim"  
   use "unblevable/quick-scope"
   use "phaazon/hop.nvim"
-  -- use "andymass/vim-matchup"
+  use "andymass/vim-matchup"
   -- use "nacro90/numb.nvim"
   -- use "monaqa/dial.nvim"
   -- use "norcalli/nvim-colorizer.lua"
@@ -78,7 +78,7 @@ return packer.startup(function(use)
   -- use "lunarvim/vim-solidity"
   -- use "blackCauldron7/surround.nvim"
   -- use "Shatur/neovim-session-manager"
-  -- use "rcarriga/nvim-notify"
+  use "rcarriga/nvim-notify"
   -- use "tversteeg/registers.nvim"
   -- use 'metakirby5/codi.vim'
   -- use {
