@@ -12,6 +12,11 @@ telescope.setup {
     selection_caret = " ",
     path_display = { "smart" },
 
+    sorting_strategy = "ascending",
+    layout_config = {
+      prompt_position = "top",
+    },
+
     mappings = {
       i = {
         -- ["<C-n>"] = actions.cycle_history_next,
@@ -87,7 +92,7 @@ telescope.setup {
     -- builtin picker
     find_files = {
       hidden = true,
-    }
+    },
   },
   extensions = {
     -- Your extension configuration goes here:
