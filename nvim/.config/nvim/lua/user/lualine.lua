@@ -33,7 +33,8 @@ local mode = {
 
 local filetype = {
 	"filetype",
-	icons_enabled = false,
+	icons_enabled = true,
+	colored = true,
 	icon = nil,
 }
 
@@ -45,7 +46,7 @@ local branch = {
 
 local location = {
 	"location",
-	padding = 0,
+	padding = 1,
 }
 
 -- cool function for progress
@@ -56,6 +57,11 @@ local progress = function()
 	local line_ratio = current_line / total_lines
 	local index = math.ceil(line_ratio * #chars)
 	return chars[index]
+end
+
+local total_lines = function()
+	local total_lines = vim.fn.line("$")
+	return  total_lines;
 end
 
 local spaces = function()
@@ -78,7 +84,7 @@ lualine.setup({
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_x = { diff, spaces, "encoding", filetype },
 		lualine_y = { location },
-		lualine_z = { progress },
+		lualine_z = { total_lines, progress },
 	},
 	inactive_sections = {
 		lualine_a = {},
