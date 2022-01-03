@@ -74,7 +74,7 @@ return packer.startup(function(use)
   use "folke/todo-comments.nvim"
   use "kevinhwang91/nvim-bqf"
   use "ThePrimeagen/harpoon"
-  -- use "MattesGroeger/vim-bookmarks"
+  use "MattesGroeger/vim-bookmarks"
   -- use "lunarvim/vim-solidity"
   use "blackCauldron7/surround.nvim"
   use "Shatur/neovim-session-manager"
