@@ -112,7 +112,7 @@ return packer.startup(function(use)
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "filipdutescu/renamer.nvim"
-  -- use "simrat39/symbols-outline.nvim"
+  use "simrat39/symbols-outline.nvim"
   -- use 'ray-x/lsp_signature.nvim'
   -- use "b0o/SchemaStore.nvim"
   -- use {
