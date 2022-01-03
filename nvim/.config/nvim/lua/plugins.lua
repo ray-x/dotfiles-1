@@ -72,14 +72,14 @@ return packer.startup(function(use)
   use "folke/zen-mode.nvim"
   use "karb94/neoscroll.nvim"
   use "folke/todo-comments.nvim"
-  -- use "kevinhwang91/nvim-bqf"
-  -- use "ThePrimeagen/harpoon"
+  use "kevinhwang91/nvim-bqf"
+  use "ThePrimeagen/harpoon"
   -- use "MattesGroeger/vim-bookmarks"
   -- use "lunarvim/vim-solidity"
-  -- use "blackCauldron7/surround.nvim"
-  -- use "Shatur/neovim-session-manager"
+  use "blackCauldron7/surround.nvim"
+  use "Shatur/neovim-session-manager"
   use "rcarriga/nvim-notify"
-  -- use "tversteeg/registers.nvim"
+  use "tversteeg/registers.nvim"
   -- use 'metakirby5/codi.vim'
   -- use {
   --   "iamcco/markdown-preview.nvim",
@@ -101,6 +101,21 @@ return packer.startup(function(use)
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
+  -- use "hrsh7th/cmp-emoji"
+  -- use {
+  --   "tzachar/cmp-tabnine",
+  --   config = function()
+  --     local tabnine = require "cmp_tabnine.config"
+  --     tabnine:setup {
+  --       max_lines = 1000,
+  --       max_num_results = 20,
+  --       sort = true,
+  --     }
+  --   end,
+
+  --   run = "./install.sh",
+  --   requires = "hrsh7th/nvim-cmp",
+  -- }
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -130,13 +145,15 @@ return packer.startup(function(use)
   }
   use "p00f/nvim-ts-rainbow"
   use "JoosepAlviste/nvim-ts-context-commentstring"
+  -- use "windwp/nvim-ts-autotag"
+  use 'romgrk/nvim-treesitter-context'
+  -- use 'mizlan/iswap.nvim'
 
   -- Git
   use "lewis6991/gitsigns.nvim"
-  use "f-person/git-blame.nvim"
-  -- use "ruifm/gitlinker.nvim"
-  -- use "mattn/vim-gist"
-  -- use "mattn/webapi-vim"
+  -- no longer needed, gitsign is now used
+  -- use "f-person/git-blame.nvim"
+  use "ruifm/gitlinker.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
