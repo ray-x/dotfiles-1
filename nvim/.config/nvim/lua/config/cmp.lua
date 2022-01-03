@@ -9,6 +9,17 @@ if not snip_status_ok then
 end
 
 require("luasnip/loaders/from_vscode").lazy_load()
+local lspkind = require('lspkind')
+
+local source_mapping = {
+	nvim_lsp = "[LSP]",
+  cmp_tabnine = "[TabNine]",
+  emoji = "[Emoji]",
+  nvim_lua = "[LSP]",
+  luasnip = "[Snippet]",
+  buffer = "[Buffer]",
+  path = "[Path]",
+}
 
 local check_backspace = function()
   local col = vim.fn.col "." - 1
@@ -94,24 +105,44 @@ cmp.setup {
       "s",
     }),
   },
+  -- formatting = {
+  --   fields = { "kind", "abbr", "menu" },
+  --   format = function(entry, vim_item)
+  --     -- Kind icons
+  --     vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+  --     -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+  --     vim_item.menu = ({
+  --       nvim_lsp = "[LSP]",
+  --       cmp_tabnine = "[TabNine]",
+  --       emoji = "[Emoji]",
+  --       nvim_lua = "[LSP]",
+  --       luasnip = "[Snippet]",
+  --       buffer = "[Buffer]",
+  --       path = "[Path]",
+  --     })[entry.source.name]
+  --     return vim_item
+  --   end,
+  -- },
+
   formatting = {
-    fields = { "kind", "abbr", "menu" },
+    fields = { "abbr", "kind", "menu" },
     format = function(entry, vim_item)
-      -- Kind icons
-      vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-      -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-      vim_item.menu = ({
-        nvim_lsp = "[LSP]",
-        nvim_lua = "[LSP]",
-        luasnip = "[Snippet]",
-        buffer = "[Buffer]",
-        path = "[Path]",
-      })[entry.source.name]
-      return vim_item
-    end,
+      -- this is to use icon for the kind
+			-- vim_item.kind = lspkind.presets.default[vim_item.kind]
+			local menu = source_mapping[entry.source.name]
+			if entry.source.name == 'cmp_tabnine' then
+				if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
+					menu = entry.completion_item.data.detail .. ' ' .. menu
+				end
+			end
+			vim_item.menu = menu
+			return vim_item
+		end,
   },
   sources = {
     { name = "nvim_lsp" },
+    { name = 'cmp_tabnine' },
+    { name = "emoji" },
     { name = "nvim_lua" },
     { name = "luasnip" },
     { name = "buffer" },
@@ -125,7 +156,7 @@ cmp.setup {
     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
   },
   experimental = {
-    ghost_text = false,
+    ghost_text = true,
     native_menu = false,
   },
 }

@@ -35,10 +35,10 @@ require("config.symbol-outline")
 -- require("config.git-blame")
 require("config.gitlinker")
 require("config.session-manager")
--- not sure how surround works, it conflicts with hop.vim
+--TODO not sure how surround works, it conflicts with hop.vim
 require("config.surround")
 require("config.notify")
--- not sure why it's not working yet
+--TODO not sure why it's not working yet
 require("config.ts-context")
 require("config.registers")
 require("config.cheatsheet")

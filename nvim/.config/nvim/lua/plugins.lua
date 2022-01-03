@@ -75,17 +75,16 @@ return packer.startup(function(use)
   use "kevinhwang91/nvim-bqf"
   use "ThePrimeagen/harpoon"
   use "MattesGroeger/vim-bookmarks"
-  -- use "lunarvim/vim-solidity"
   use "blackCauldron7/surround.nvim"
   use "Shatur/neovim-session-manager"
   use "rcarriga/nvim-notify"
   use "tversteeg/registers.nvim"
-  -- use 'metakirby5/codi.vim'
-  -- use {
-  --   "iamcco/markdown-preview.nvim",
-  --   run = "cd app && npm install",
-  --   ft = "markdown",
-  -- }
+  use 'metakirby5/codi.vim'
+  use {
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    ft = "markdown",
+  }
 
   -- My plugins
   use "sudormrfbin/cheatsheet.nvim"
@@ -101,21 +100,29 @@ return packer.startup(function(use)
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
-  -- use "hrsh7th/cmp-emoji"
-  -- use {
-  --   "tzachar/cmp-tabnine",
-  --   config = function()
-  --     local tabnine = require "cmp_tabnine.config"
-  --     tabnine:setup {
-  --       max_lines = 1000,
-  --       max_num_results = 20,
-  --       sort = true,
-  --     }
-  --   end,
+  use "hrsh7th/cmp-emoji"
+  use "onsails/lspkind-nvim"
+  use {
+    "tzachar/cmp-tabnine",
+    after = "nvim-cmp",
+    config = function()
+      local tabnine = require "cmp_tabnine.config"
+      tabnine:setup {
+        max_lines = 1000;
+        max_num_results = 20;
+        sort = true;
+        run_on_every_keystroke = true;
+        snippet_placeholder = '..';
+        ignored_file_types = { -- default is not to ignore
+          -- uncomment to ignore in lua:
+          -- lua = true
+        };
+      }
+    end,
 
-  --   run = "./install.sh",
-  --   requires = "hrsh7th/nvim-cmp",
-  -- }
+    run = "./install.sh",
+    requires = "hrsh7th/nvim-cmp",
+  }
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine

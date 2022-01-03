@@ -78,6 +78,8 @@ local opts = {
   nowait = true, -- use `nowait` when creating keymaps
 }
 
+which_key.setup(setup)
+
 local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
   ["b"] = {
@@ -224,5 +226,30 @@ local mappings = {
   },
 }
 
-which_key.setup(setup)
 which_key.register(mappings, opts)
+
+local m_opts = {
+  mode = "n", -- NORMAL mode
+  prefix = "m",
+  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+  silent = true, -- use `silent` when creating keymaps
+  noremap = true, -- use `noremap` when creating keymaps
+  nowait = true, -- use `nowait` when creating keymaps
+}
+
+local m_mappings = {
+  a = { "<cmd>BookmarkAnnotate<cr>", "Annotate" },
+  c = { "<cmd>BookmarkClear<cr>", "Clear" },
+  m = { "<cmd>BookmarkToggle<cr>", "Toggle" },
+  h = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon" },
+  j = { "<cmd>BookmarkNext<cr>", "Next" },
+  k = { "<cmd>BookmarkPrev<cr>", "Prev" },
+  s = {
+    "<cmd>lua require('telescope').extensions.vim_bookmarks.all({ hide_filename=false, prompt_title=\"bookmarks\", shorten_path=false })<cr>",
+    "Show",
+  },
+  x = { "<cmd>BookmarkClearAll<cr>", "Clear All" },
+  u = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Harpoon UI" },
+}
+
+which_key.register(m_mappings, m_opts)
