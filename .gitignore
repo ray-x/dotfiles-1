@@ -1,1 +1,7 @@
 nvim/.config/nvim/plugin
+
+# temp files directories
+cache/
+log/
+*.swp
+.DS_Store
