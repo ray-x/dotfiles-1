@@ -162,6 +162,8 @@ return packer.startup(function(use)
   -- no longer needed, gitsign is now used
   -- use "f-person/git-blame.nvim"
   use "ruifm/gitlinker.nvim"
+  -- need to run "brew install lazygit"
+  use 'tpope/vim-fugitive'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

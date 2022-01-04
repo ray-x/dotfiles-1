@@ -117,10 +117,9 @@ local mappings = {
 
   g = {
     name = "Git",
-    g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
+    g = { "<cmd>G<CR>", "Lazygit" },
     j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
     k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-    l = { "<cmd>GitBlameToggle<cr>", "Blame" },
     p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
     r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
     R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
@@ -136,15 +135,16 @@ local mappings = {
       "<cmd>Gitsigns diffthis HEAD<cr>",
       "Diff",
     },
-    G = {
-      name = "Gist",
-      a = { "<cmd>Gist -b -a<cr>", "Create Anon" },
-      d = { "<cmd>Gist -d<cr>", "Delete" },
-      f = { "<cmd>Gist -f<cr>", "Fork" },
-      g = { "<cmd>Gist -b<cr>", "Create" },
-      l = { "<cmd>Gist -l<cr>", "List" },
-      p = { "<cmd>Gist -b -p<cr>", "Create Private" },
-    },
+    -- Gist isn't installed.
+    -- G = {
+    --   name = "Gist",
+    --   a = { "<cmd>Gist -b -a<cr>", "Create Anon" },
+    --   d = { "<cmd>Gist -d<cr>", "Delete" },
+    --   f = { "<cmd>Gist -f<cr>", "Fork" },
+    --   g = { "<cmd>Gist -b<cr>", "Create" },
+    --   l = { "<cmd>Gist -l<cr>", "List" },
+    --   p = { "<cmd>Gist -b -p<cr>", "Create Private" },
+    -- },
   },
 
   l = {

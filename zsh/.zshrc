@@ -100,6 +100,7 @@ plugins=(
     git-open
     zsh-autosuggestions
     zsh-syntax-highlighting
+    tmux
 )
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
