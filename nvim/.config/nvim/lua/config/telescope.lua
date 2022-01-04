@@ -5,6 +5,8 @@ end
 
 local actions = require "telescope.actions"
 
+telescope.load_extension('vim_bookmarks')
+
 telescope.setup {
   defaults = {
 

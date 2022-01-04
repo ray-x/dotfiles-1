@@ -238,17 +238,20 @@ local m_opts = {
 }
 
 local m_mappings = {
-  a = { "<cmd>BookmarkAnnotate<cr>", "Annotate" },
-  c = { "<cmd>BookmarkClear<cr>", "Clear" },
-  m = { "<cmd>BookmarkToggle<cr>", "Toggle" },
-  h = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon" },
-  j = { "<cmd>BookmarkNext<cr>", "Next" },
-  k = { "<cmd>BookmarkPrev<cr>", "Prev" },
+  m = { "Toggle bookmark" },
+  i = { "Annotate" },
+  n = { "Next" },
+  p = { "Previous" },
+  a = { "Show all" },
+  c = { "Clear" },
+  x = { "Clear All" },
   s = {
     "<cmd>lua require('telescope').extensions.vim_bookmarks.all({ hide_filename=false, prompt_title=\"bookmarks\", shorten_path=false })<cr>",
     "Show",
   },
-  x = { "<cmd>BookmarkClearAll<cr>", "Clear All" },
+  h = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon" },
+  j = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Next" },
+  k = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Prev" },
   u = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Harpoon UI" },
 }
 

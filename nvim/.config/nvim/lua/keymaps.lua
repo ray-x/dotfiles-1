@@ -39,6 +39,10 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
+-- Command --
+-- Press jj fast to enter
+keymap("c", "jj", "<ESC>", opts)
+
 -- Insert --
 -- Press jj fast to enter
 keymap("i", "jj", "<ESC>", opts)
