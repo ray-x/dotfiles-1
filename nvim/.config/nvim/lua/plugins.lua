@@ -101,28 +101,29 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
   use "hrsh7th/cmp-emoji"
-  use "onsails/lspkind-nvim"
-  use {
-    "tzachar/cmp-tabnine",
-    after = "nvim-cmp",
-    config = function()
-      local tabnine = require "cmp_tabnine.config"
-      tabnine:setup {
-        max_lines = 1000;
-        max_num_results = 20;
-        sort = true;
-        run_on_every_keystroke = true;
-        snippet_placeholder = '..';
-        ignored_file_types = { -- default is not to ignore
-          -- uncomment to ignore in lua:
-          -- lua = true
-        };
-      }
-    end,
+  -- onsails/lspkind-nvim" was for tabnine
+  -- use "onsails/lspkind-nvim"
+  -- use {
+  --   "tzachar/cmp-tabnine",
+  --   after = "nvim-cmp",
+  --   config = function()
+  --     local tabnine = require "cmp_tabnine.config"
+  --     tabnine:setup {
+  --       max_lines = 1000;
+  --       max_num_results = 20;
+  --       sort = true;
+  --       run_on_every_keystroke = true;
+  --       snippet_placeholder = '..';
+  --       ignored_file_types = { -- default is not to ignore
+  --         -- uncomment to ignore in lua:
+  --         -- lua = true
+  --       };
+  --     }
+  --   end,
 
-    run = "./install.sh",
-    requires = "hrsh7th/nvim-cmp",
-  }
+  --   run = "./install.sh",
+  --   requires = "hrsh7th/nvim-cmp",
+  -- }
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -135,12 +136,12 @@ return packer.startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "filipdutescu/renamer.nvim"
   use "simrat39/symbols-outline.nvim"
-  -- use 'ray-x/lsp_signature.nvim'
-  -- use "b0o/SchemaStore.nvim"
-  -- use {
-  --   "folke/trouble.nvim",
-  --   cmd = "TroubleToggle",
-  -- }
+  use 'ray-x/lsp_signature.nvim'
+  use "b0o/SchemaStore.nvim"
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons"
+  }
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -152,9 +153,8 @@ return packer.startup(function(use)
   }
   use "p00f/nvim-ts-rainbow"
   use "JoosepAlviste/nvim-ts-context-commentstring"
-  -- use "windwp/nvim-ts-autotag"
+  use "windwp/nvim-ts-autotag"
   use 'romgrk/nvim-treesitter-context'
-  -- use 'mizlan/iswap.nvim'
 
   -- Git
   use "lewis6991/gitsigns.nvim"

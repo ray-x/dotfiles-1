@@ -91,7 +91,7 @@ local mappings = {
   ["h"] = { "<cmd>nohlsearch<CR>", "No HL" },
   ["Q"] = { "<cmd>q!<CR>", "Quit" },
   ["/"] = { "<cmd>lua require(\"Comment.api\").toggle_current_linewise()<CR>", "Comment" },
-  ["x"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+  ["k"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["f"] = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find files"},
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },

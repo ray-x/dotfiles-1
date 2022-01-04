@@ -70,3 +70,16 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 -- Plugins --
 -- nvim tree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+
+-- Editing shortcuts--
+-- add new line in normal mode
+keymap("n", "<C-o>", "o", opts)
+-- doesn't work as iterm2 not able to detect the different between <C-o> and <C-S-o>
+-- keymap("n", "<C-S-o>", "<S-o>", opts)
+-- add new line in insert mode
+keymap("i", "<C-o>", "<ESC>o", opts)
+-- doesn't work as iterm2 not able to detect the different between <C-o> and <C-S-o>
+-- keymap("i", "<C-S-o>", "<ESC><S-o>", opts)
+
+-- jump to the end of line in insert mode
+keymap("i", "<C-l>", "<ESC>$a", opts)
