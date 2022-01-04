@@ -85,9 +85,10 @@ return packer.startup(function(use)
     run = "cd app && npm install",
     ft = "markdown",
   }
-
-  -- My plugins
   use "sudormrfbin/cheatsheet.nvim"
+
+  -- tmux
+  use 'christoomey/vim-tmux-navigator'
 
   -- Colorschemes
   use 'Mofiqul/vscode.nvim'
