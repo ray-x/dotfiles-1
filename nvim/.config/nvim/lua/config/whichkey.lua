@@ -123,26 +123,45 @@ local mappings = {
     f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
   },
 
-  g = {
-    name = "Git",
-    g = { "<cmd>G<CR>", "Lazygit" },
-    j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
-    k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-    p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-    r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-    R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-    s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-    u = {
-      "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
-      "Undo Stage Hunk",
+    g = {
+      name = "Git",
+      s = { "<cmd>G<CR>", "Git status" },
+      b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+      B = { "<cmd>Telescope git_branches<cr>", "Checkout remote branchs" },
+      c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
+      d = { "<cmd>Gdiff<cr>", "Git diff" },
+      a = { "<cmd>Git add .<CR>", "Git add all"},
+      C = { "<cmd>Git commit<CR>", "Git commit"},
+      g = { "<cmd>diffget //2<CR>", "Accept left"},
+      h = { "<cmd>diffget //3<CR>", "Accept left"},
+      j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
+      k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
+      p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
+      r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
+      R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
+      o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
     },
-    o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-    d = {
-      "<cmd>Gitsigns diffthis HEAD<cr>",
-      "Diff",
-    },
+
+  -- g = {
+  --   name = "Git",
+  --   g = { "<cmd>G<CR>", "Git status" },
+  --   j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
+  --   k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
+  --   p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
+  --   r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
+  --   R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
+  --   s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
+  --   u = {
+  --     "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
+  --     "Undo Stage Hunk",
+  --   },
+  --   o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
+  --   b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+  --   c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
+  --   d = {
+  --     "<cmd>Gitsigns diffthis HEAD<cr>",
+  --     "Diff",
+  --   },
     -- Gist isn't installed.
     -- G = {
     --   name = "Gist",
@@ -153,7 +172,7 @@ local mappings = {
     --   l = { "<cmd>Gist -l<cr>", "List" },
     --   p = { "<cmd>Gist -b -p<cr>", "Create Private" },
     -- },
-  },
+  -- },
 
   l = {
     name = "LSP",
