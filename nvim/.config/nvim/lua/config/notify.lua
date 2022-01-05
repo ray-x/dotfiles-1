@@ -27,13 +27,13 @@ notify.setup {
   minimum_width = 10,
 
   -- Icons for the different levels
-  icons = {
-    ERROR = " ",
-    WARN = " ",
-    INFO = " ",
-    DEBUG = " ",
-    TRACE = " ",
-  },
+  -- icons = {
+  --   ERROR = " ",
+  --   WARN = " ",
+  --   INFO = " ",
+  --   DEBUG = " ",
+  --   TRACE = " ",
+  -- },
 }
 
 vim.notify = notify
