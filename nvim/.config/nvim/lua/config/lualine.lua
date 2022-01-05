@@ -11,17 +11,33 @@ local diagnostics = {
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
 	sections = { "error", "warn" },
+	-- sections = { 'error', 'warn', 'info', 'hint' },
+	-- Displays diagnostics for the defined severity types
+    --   symbols = {error = 'E', warn = 'W', info = 'I', hint = 'H'},
 	symbols = { error = " ", warn = " " },
-	colored = false,
+	diagnostics_color = {
+	  -- Same values as the general color option can be used here.
+	  error = 'DiagnosticError', -- Changes diagnostics' error color.
+	  warn  = 'DiagnosticWarn',  -- Changes diagnostics' warn color.
+	  info  = 'DiagnosticInfo',  -- Changes diagnostics' info color.
+	  hint  = 'DiagnosticHint',  -- Changes diagnostics' hint color.
+	},
+	colored = true,
 	update_in_insert = false,
 	always_visible = true,
 }
 
 local diff = {
 	"diff",
-	colored = false,
+	colored = true,
+	diff_color = {
+	  -- Same color values as the general color option can be used here.
+	  added    = 'DiffAdd',    -- Changes the diff's added color
+	  modified = 'DiffChange', -- Changes the diff's modified color
+	  removed  = 'DiffDelete', -- Changes the diff's removed color you
+	},
 	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
-  cond = hide_in_width
+  	cond = hide_in_width
 }
 
 local mode = {
@@ -80,7 +96,7 @@ lualine.setup({
 	sections = {
 		lualine_a = { mode },
 		lualine_b = { branch, diff, diagnostics },
-		lualine_c = {},
+		lualine_c = { "filename" },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_x = { spaces, "encoding", filetype },
 		lualine_y = { location },
@@ -94,6 +110,13 @@ lualine.setup({
 		lualine_y = {},
 		lualine_z = {},
 	},
-	tabline = {},
+	tabline = {
+		lualine_a = {'buffers'},
+		lualine_b = {'branch'},
+		lualine_c = {'filename'},
+		lualine_x = {},
+		lualine_y = {},
+		lualine_z = {'tabs'}
+	},
 	extensions = {},
 })

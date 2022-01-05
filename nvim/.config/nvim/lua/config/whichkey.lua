@@ -64,8 +64,8 @@ local setup = {
     -- list of mode / prefixes that should never be hooked by WhichKey
     -- this is mostly relevant for key maps that start with a native binding
     -- most people should not need to change this
-    i = { "j", "k" },
-    v = { "j", "k" },
+    i = { "j", "j" },
+    v = { "j", "j" },
   },
 }
 
@@ -103,7 +103,8 @@ local mappings = {
       "List buffers",
     },
     C = { "<cmd>BufferCloseAllButCurrent<CR>", "Close other buffers" },
-    p = { "<cmd>BufferPick<CR>", "Pick buffer" },
+    p = { "<cmd>BufferPick<CR>", "Pin buffer" },
+    s = { "<cmd>BufferPick<CR>", "Select buffer" },
   },
 
   p = {
