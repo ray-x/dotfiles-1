@@ -48,10 +48,6 @@ keymap("c", "jj", "<ESC>", opts)
 keymap("i", "jj", "<ESC>", opts)
 
 -- Visual --
--- Press jj fast to enter
-keymap("v", "jj", "<ESC>", opts)
-
--- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
