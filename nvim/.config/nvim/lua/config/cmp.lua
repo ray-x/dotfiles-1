@@ -57,6 +57,17 @@ local kind_icons = {
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
+-- CTRL + Space to toggle completion menu
+local function toggle_completion()
+  return function(fallback)
+    if cmp.core.view:visible() then
+      require('cmp').close()
+    else
+      require('cmp').complete()
+    end
+  end
+end
+
 cmp.setup {
   snippet = {
     expand = function(args)
@@ -68,7 +79,7 @@ cmp.setup {
 		["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-    ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+    ["<C-Space>"] = cmp.mapping(toggle_completion(), { "i", "c" }),
     ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
     ["<C-e>"] = cmp.mapping {
       i = cmp.mapping.abort(),
