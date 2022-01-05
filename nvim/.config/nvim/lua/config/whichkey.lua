@@ -82,22 +82,29 @@ which_key.setup(setup)
 
 local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-  ["b"] = {
-    "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-    "Buffers",
-  },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No HL" },
-  ["Q"] = { "<cmd>q!<CR>", "Quit" },
+  ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["/"] = { "<cmd>lua require(\"Comment.api\").toggle_current_linewise()<CR>", "Comment" },
-  ["k"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["f"] = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find files"},
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
   ["R"] = { '<cmd>lua require("renamer").rename()<cr>', "Rename" },
   ["z"] = { "<cmd>ZenMode<cr>", "Zen" },
   ["gy"] = "Link",
+
+  b = {
+    name = "Buffer",
+    c = { "<cmd>BufferClose<CR>", "Close buffer" },
+    d = { "<cmd>Bdelete!<CR>", "Delete buffer" },
+    l= {
+      "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+      "List buffers",
+    },
+    C = { "<cmd>BufferCloseAllButCurrent<CR>", "Close other buffers" },
+    p = { "<cmd>BufferPick<CR>", "Pick buffer" },
+  },
 
   p = {
     name = "Packer",

@@ -52,7 +52,9 @@ return packer.startup(function(use)
         'kyazdani42/nvim-web-devicons', -- optional, for file icon
       }
   }
-  use "akinsho/bufferline.nvim"
+
+  use "romgrk/barbar.nvim"
+  -- use "akinsho/bufferline.nvim"
   use "nvim-lualine/lualine.nvim"
   use "moll/vim-bbye"
   use "akinsho/toggleterm.nvim"
