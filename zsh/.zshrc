@@ -150,6 +150,9 @@ alias ll="exa -l --icons -a"
 alias t="tig"
 alias gpr="hub pull-request"
 alias vim="nvim"
+alias v="vim"
+alias cls="clear"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
