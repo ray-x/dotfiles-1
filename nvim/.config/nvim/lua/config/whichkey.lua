@@ -92,6 +92,7 @@ local mappings = {
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
   ["R"] = { '<cmd>lua require("renamer").rename()<cr>', "Rename" },
+  ["v"] = { "<cmd>vsplit<cr>", "Virtical split" },
   ["z"] = { "<cmd>ZenMode<cr>", "Zen" },
   ["gy"] = "Link",
 
@@ -252,6 +253,12 @@ local mappings = {
     h = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Highlight" },
     p = { "<cmd>TSPlaygroundToggle<cr>", "Playground" },
   },
+
+  W = {
+    name = "Windows",
+    v = { "<cmd>vsplit<CR>", "Vertical Split" },
+    h = { "<cmd>split<CR>", "Horizontal Split" },
+  }
 }
 
 which_key.register(mappings, opts)
@@ -284,3 +291,19 @@ local m_mappings = {
 }
 
 which_key.register(m_mappings, m_opts)
+
+local w_opts = {
+  mode = "n", -- NORMAL mode
+  prefix = "w",
+  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+  silent = true, -- use `silent` when creating keymaps
+  noremap = true, -- use `noremap` when creating keymaps
+  nowait = true, -- use `nowait` when creating keymaps
+}
+
+local w_mappings = {
+  v = { "<cmd>vsplit<CR>", "Vertical Split" },
+  h = { "<cmd>split<CR>", "Horizontal Split" },
+}
+
+which_key.register(w_mappings, w_opts)
