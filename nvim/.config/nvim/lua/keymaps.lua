@@ -39,6 +39,9 @@ keymap("n", "¬", ":bprevious<CR>", opts)
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
+-- C-t Find file
+keymap("n", "<C-t>", ":Telescope find_files<CR>", opts)
+
 -- Command --
 -- Press jj fast to enter
 keymap("c", "jj", "<ESC>", opts)
