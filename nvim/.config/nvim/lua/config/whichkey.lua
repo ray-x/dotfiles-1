@@ -298,7 +298,7 @@ which_key.register(m_mappings, m_opts)
 
 local w_opts = {
 	mode = "n", -- NORMAL mode
-	prefix = "w",
+	prefix = "W",
 	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
 	silent = true, -- use `silent` when creating keymaps
 	noremap = true, -- use `noremap` when creating keymaps
@@ -308,7 +308,7 @@ local w_opts = {
 local w_mappings = {
 	v = { "<cmd>vsplit<CR>", "Vertical Split" },
 	h = { "<cmd>split<CR>", "Horizontal Split" },
-  r = { "<C-w>r", "Swap pane position" },
+  	r = { "<C-w>r", "Swap pane position" },
 	tv = { "<C-w>t<C-w>K", "To Vertical Split" },
 	th = { "<C-w>t<C-w>H", "To Horizontal Split" },
 }
