@@ -41,6 +41,9 @@ M.setup = function()
   vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
     border = "rounded",
   })
+
+  -- lsputils plugin configure hood/popui.nvim, replacing "RishabhRD/nvim-lsputils" temporarily
+  vim.ui.select = require"popui.ui-overrider"
 end
 
 local function lsp_highlight_document(client)

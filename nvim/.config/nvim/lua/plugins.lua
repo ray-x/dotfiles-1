@@ -145,6 +145,12 @@ return packer.startup(function(use)
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons"
   }
+  use "RishabhRD/popfix"
+  -- no longer working, will come back and see if there any update 
+  -- on lsputils package for resovling the issue
+  --use "RishabhRD/nvim-lsputils"
+  -- this is replacing lsputils before the issue is resolved
+  use "hood/popui.nvim"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
