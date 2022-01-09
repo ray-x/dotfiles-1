@@ -47,5 +47,8 @@ require("config.registers")
 require("config.cheatsheet")
 require("config.nvimcheat")
 
+-- not working yet...
+require("config.navigator")
+
 -- load this at the last
 require("config.whichkey")

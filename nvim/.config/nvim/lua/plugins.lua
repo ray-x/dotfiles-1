@@ -155,6 +155,9 @@ return packer.startup(function(use)
   -- this is replacing lsputils before the issue is resolved
   use "hood/popui.nvim"
 
+  use "ray-x/guihua.lua"
+  use {'ray-x/navigator.lua', requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}}
+
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use "tom-anders/telescope-vim-bookmarks.nvim"
