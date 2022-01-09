@@ -45,6 +45,7 @@ require("config.notify")
 require("config.ts-context")
 require("config.registers")
 require("config.cheatsheet")
+require("config.nvimcheat")
 
 -- load this at the last
 require("config.whichkey")

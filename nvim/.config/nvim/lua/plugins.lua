@@ -87,7 +87,10 @@ return packer.startup(function(use)
     run = "cd app && npm install",
     ft = "markdown",
   }
+  -- this is vim command cheatshett
   use "sudormrfbin/cheatsheet.nvim"
+  -- this is general language cheatsheet
+  use "RishabhRD/nvim-cheat.sh"
 
   -- tmux
   use 'christoomey/vim-tmux-navigator'
