@@ -145,6 +145,8 @@ return packer.startup(function(use)
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons"
   }
+  use "RishabhRD/popfix"
+  use "RishabhRD/nvim-lsputils"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
