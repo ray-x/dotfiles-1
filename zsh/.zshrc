@@ -172,3 +172,9 @@ export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :50 {}'"
 
 export FZF_ALT_C_COMMAND='fd --type d . --color=never --hidden --exclude .git'
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -50'"
+
+# load azure-cli autocomplete if exists
+if [ -f "$HOMEBREW_CELLAR/azure-cli/2.32.0/etc/bash_completion.d/az" ]; then
+    source $HOMEBREW_CELLAR/azure-cli/2.32.0/etc/bash_completion.d/az
+fi
+
